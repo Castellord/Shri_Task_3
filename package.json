@@ -1,0 +1,15 @@
+{
+    "name": "js",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "mocha"
+    },
+    "author": "Egor Gugaec",
+    "license": "ISC",
+    "devDependencies": {
+        "chai": "^4.1.2",
+        "mocha": "^5.2.0"
+    }
+}
