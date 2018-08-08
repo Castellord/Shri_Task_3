@@ -26,7 +26,7 @@ const input = loadData();
 function saveResult(result) {
     let fs = require('fs');
     let serialized = JSON.stringify(result, null, 2);
-    fs.writeFileSync('./data/myOutput.json', serialized);
+    fs.writeFileSync('./data/output.json', serialized);
 }
 
 
