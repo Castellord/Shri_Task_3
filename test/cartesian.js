@@ -1,8 +1,8 @@
 const chai = require('chai');
 const assert = chai.assert;
-const power = require('../power.js');
-const cartesian = power.cartesian;
-const hoursRates = power.makeHoursWithPrice;
+const lib = require('../lib.js');
+const cartesian = lib.getCartesian;
+const hoursRates = lib.getHours;
 
 describe("Декартово преобразование", function() {
     // it("Returns correct cartesian product of 1 array", function() {

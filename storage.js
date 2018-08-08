@@ -22,6 +22,16 @@ function loadData() {
 }
 
 const input = loadData();
+
+function saveResult(result) {
+    let fs = require('fs');
+    let serialized = JSON.stringify(result, null, 2);
+    fs.writeFileSync('./data/myOutput.json', serialized);
+}
+
+
+
 exports.devices = input.devices;
 exports.rates = input.rates;
 exports.maxPower = input.maxPower;
+exports.saveResult = saveResult;

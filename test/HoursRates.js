@@ -1,7 +1,7 @@
 const chai = require('chai');
 const assert = chai.assert;
-const power = require('../power.js');
-const hoursPrice = power.hoursPrice;
+const lib = require('../lib.js');
+const hoursPrice = lib.getCost;
 
 describe("Сетка часов со стоимостью", function() {
 

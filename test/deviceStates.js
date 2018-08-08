@@ -1,7 +1,7 @@
 const chai = require('chai');
 const assert = chai.assert;
-const power = require('../power.js');
-const deviseStates = power.deviceStates;
+const lib = require('../lib.js');
+const deviseStates = lib.getStates;
 
 describe("Время начала работы устройств", function() {
     it("Если у нас одно устройство с временем работы 22 часа", function() {
