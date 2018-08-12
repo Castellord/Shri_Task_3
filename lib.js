@@ -24,24 +24,32 @@ getHours = (rates) => {
     return hours
 }
 
+const unzip = (mas) => {
+    let result = [];
+    for (i in mas) {
+        result.push([mas[i]]);
+    }
+    return result;
+}
 const f = (a, b) => [].concat(...a.map(d => b.map(e => [].concat(d, e))));
-const getCartesian = (a, b, ...c) => (b ? getCartesian(f(a, b), ...c) : a);
+const getCartesianRecursive = (a, b, ...c) => (b ? getCartesianRecursive(f(a, b), ...c) : a);
+const getCartesian = (...args) => (args.length > 1 ? getCartesianRecursive(...args) : unzip(...args));
+
+
+
+
 
 getStates = (devices) => {
     let states = [];
     for (d in devices) {
-        // добавляем каждому девайсу поле states в виде пустого массива
         let devStates = [];
-        // 
         for (let i = 0; i < 24; i++) {
-
             if ((i + devices[d].duration) <= 24) {
                 if (devices[d].mode === "day") {
                     if (i >= 7 && (i + devices[d].duration) <= 21) {
                         devStates.push(i);
                     }
-                } else
-                if (devices[d].mode === "night") {
+                } else if (devices[d].mode === "night") {
                     if ((i < 7 && (i + devices[d].duration) <= 7) || (i >= 21 && (i + devices[d].duration) <= 31)) {
                         devStates.push(i);
                     }

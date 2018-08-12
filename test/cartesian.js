@@ -5,15 +5,15 @@ const cartesian = lib.getCartesian;
 const hoursRates = lib.getHours;
 
 describe("Декартово преобразование", function() {
-    // it("Returns correct cartesian product of 1 array", function() {
-    //     assert.equal(
-    //         JSON.stringify(cartesian([1, 2])),
-    //         JSON.stringify([
-    //             [1],
-    //             [2]
-    //         ])
-    //     );
-    // });
+    it("Returns correct cartesian product of 1 array", function() {
+        assert.equal(
+            JSON.stringify(cartesian([1, 2])),
+            JSON.stringify([
+                [1],
+                [2]
+            ])
+        );
+    });
 
     it("Returns correct cartesian product of 2 arrays", function() {
         assert.equal(
